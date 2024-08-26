@@ -1,1 +1,2 @@
-# IP-Assignment-4_q2
+# IP-Assignment-4_JavaScript 
+Question 2 and 3
