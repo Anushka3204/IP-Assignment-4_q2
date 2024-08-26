@@ -1,0 +1,47 @@
+//Que 2
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Class Example</title>
+</head>
+<body>
+    <h1>Check the Console</h1>
+    <script>
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            getDetails() {
+                return `Name: ${this.name}, Age: ${this.age}`;
+            }
+
+            celebrateBirthday() {
+                this.age += 1;
+                return `Happy Birthday ${this.name}! You are now ${this.age} years old.`;
+            }
+
+            getName = () => {
+                return `Name: ${this.name}`; //for arrow function
+            };
+
+            getAge = () => {
+                return `Age: ${this.age}`; // for arrow funct
+            };
+        }
+
+        const person1 = new Person('Anushka', 20);
+
+        console.log(person1.getDetails()); 
+
+        console.log(person1.celebrateBirthday()); 
+        console.log(person1.getDetails()); 
+
+        console.log(person1.getName()); 
+
+        console.log(person1.getAge()); 
+    </script>
+</body>
+</html>

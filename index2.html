@@ -1,0 +1,69 @@
+//Que 3
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person and Student Classes Example</title>
+</head>
+<body>
+    <h1>Check the Console</h1>
+    <script>
+        
+        class Person {
+            constructor(name, age) {
+                if (age < 0) {
+                    throw new Error("Age cannot be negative.");
+                }
+                this.name = name;
+                this.age = age;
+            }
+
+            getDetails() {
+                return `Name: ${this.name}, Age: ${this.age}`;
+            }
+
+            celebrateBirthday() {
+                this.age += 1;
+                return `Happy Birthday ${this.name}! You are now ${this.age} years old.`;
+            }
+        }
+
+        class Student extends Person {
+            constructor(name, age, rollNo) {
+                super(name, age);
+
+                if (rollNo <= 0) {
+                    throw new Error("Roll number must be greater than zero.");
+                }
+
+                this.rollNo = rollNo;
+            }
+
+            getDetails() {
+                return `${super.getDetails()}, Roll No: ${this.rollNo}`;
+            }
+
+            getRollNo() {
+                return `Roll No: ${this.rollNo}`;
+            }
+        }
+
+        try {
+            const student1 = new Student('Anushka', 20, 101);
+
+            console.log(student1.getDetails());
+            console.log(student1.celebrateBirthday()); 
+            console.log(student1.getDetails()); 
+
+            console.log(student1.getRollNo()); 
+
+            const student2 = new Student('Saurabh', 22, 0); //error
+
+        } catch (error) {
+            console.error('Error:', error.message); 
+        }
+    </script>
+</body>
+</html>
